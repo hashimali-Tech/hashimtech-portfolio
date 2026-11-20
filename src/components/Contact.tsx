@@ -227,7 +227,7 @@ export default function Contact() {
                   <p className="text-muted text-sm max-w-sm leading-relaxed">
                     {needsActivation ? (
                       <>
-                        <span className="text-brand-2 font-semibold">One-time setup:</span> FormSubmit has emailed an &quot;Activate Form&quot; link to <span className="text-brand-2 font-mono text-xs">hashimalideveloper@gmail.com</span>. Please click it once in your Gmail. In the meantime, you can deliver this message directly via WhatsApp below!
+                        <span className="text-brand-2 font-semibold">One-time setup:</span> FormSubmit has emailed an &quot;Activate Form&quot; link to the recipient inbox. Please confirm it in your email to receive direct messages. In the meantime, you can deliver this message directly via WhatsApp below!
                       </>
                     ) : (
                       <>
