@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #070B18;
+  --surface: #0E1530;
+  --surface-2: #141D3D;
+  --surface-hover: #19234A;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-focus: rgba(125, 211, 252, 0.4);
+
+  --text: #E8EEFF;
+  --muted: #9AA7C7;
+
+  --brand: #4C8DFF;
+  --brand-2: #7DD3FC;
+
+  --radius-sm: 12px;
+  --radius-card: 20px;
+  --radius-pill: 9999px;
+
+  --shadow-elevation: 0 16px 36px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--border);
+}
+
+/* Progressive enhancement: Elements animated by GSAP */
+html.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+html.js [data-hero-headline],
+html.js [data-hero-intro],
+html.js [data-hero-buttons],
+html.js [data-hero-stats],
+html.js [data-hero-mockup],
+html.js [data-hero-badge] {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* When reduced motion is preferred, force immediate visibility */
+@media (prefers-reduced-motion: reduce) {
+  html.js [data-reveal],
+  html.js [data-hero-headline],
+  html.js [data-hero-intro],
+  html.js [data-hero-buttons],
+  html.js [data-hero-stats],
+  html.js [data-hero-mockup],
+  html.js [data-hero-badge] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hero-float-1,
+  .hero-float-2,
+  .hero-float-3,
+  .hero-orbit {
+    animation: none !important;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--bg);
+  color: var(--text);
+  scroll-behavior: auto; /* Managed by Lenis on desktop / native smooth on touch */
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  max-width: 100%;
+  font-family: var(--font-body), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+}
+
+main {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Accessible focus styling */
+:focus-visible {
+  outline: 2px solid var(--brand-2);
+  outline-offset: 3px;
+}
+
+/* Fallback for browsers without backdrop-filter */
+@supports not (backdrop-filter: blur(1px)) {
+  .glass-navbar {
+    background-color: rgba(14, 21, 48, 0.98) !important;
+  }
+}
+
+/* Glass navbar — shared between mobile and desktop */
+.glass-navbar {
+  background-color: rgba(7, 11, 24, 0.82);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+}
+
+/* High-performance background: static radial glows + subtle radial-masked grid */
+.bg-ambient-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bg-ambient-glow {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 18% 12%, rgba(76, 141, 255, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 82% 48%, rgba(125, 211, 252, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 50% 90%, rgba(76, 141, 255, 0.06) 0%, transparent 50%);
+}
+
+.bg-grid-layer {
+  position: absolute;
+  inset: 0;
+  background-size: 32px 32px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  mask-image: radial-gradient(ellipse at 50% 30%, rgba(0,0,0,0.85) 0%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 30%, rgba(0,0,0,0.85) 0%, transparent 75%);
+}
+
+/* ── HERO FLOATING ANIMATIONS ── */
+
+/* Orbit ring gentle breathing / slow pulse */
+.hero-orbit {
+  animation: orbitPulse 6s ease-in-out infinite;
+}
+
+@keyframes orbitPulse {
+  0%, 100% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.03);
+  }
+}
+
+/* Float 1 — gentle up/down */
+.hero-float-1 {
+  animation: floatA 5s ease-in-out infinite;
+}
+
+@keyframes floatA {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+/* Float 2 — offset phase */
+.hero-float-2 {
+  animation: floatB 6s ease-in-out infinite;
+  animation-delay: -1.5s;
+}
+
+@keyframes floatB {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+/* Float 3 — third offset phase */
+.hero-float-3 {
+  animation: floatC 7s ease-in-out infinite;
+  animation-delay: -3s;
+}
+
+@keyframes floatC {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-7px); }
+}
+
+/* Custom scrollbar for desktop code block */
+[data-lenis-prevent]::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+[data-lenis-prevent]::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+[data-lenis-prevent]::-webkit-scrollbar-thumb {
+  background: var(--surface-2);
+  border-radius: 3px;
+}
+[data-lenis-prevent]::-webkit-scrollbar-thumb:hover {
+  background: var(--brand);
+}
+
+/* Contact form input styling & autofill */
+input, textarea {
+  color: #FFFFFF !important;
+  background-color: #0E1530 !important;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #0E1530 inset !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
