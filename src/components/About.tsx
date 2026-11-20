@@ -138,14 +138,14 @@ export default function About() {
               ].map((item) => (
                 <div
                   key={item.label}
-                  className="flex items-start gap-3.5 p-4 rounded-xl bg-surface/60 border border-white/[0.07] hover:border-brand/40 hover:bg-surface-2/70 transition-all group"
+                  className="flex items-start gap-3.5 p-4 rounded-xl bg-surface/60 border border-white/[0.08] hover:border-brand-2/70 hover:bg-surface-2/80 hover:shadow-[0_0_20px_rgba(76,141,255,0.25)] hover:-translate-y-0.5 transition-all duration-300 ease-out group cursor-default"
                 >
-                  <span className="text-2xl shrink-0 mt-0.5" aria-hidden="true">{item.icon}</span>
+                  <span className="text-2xl shrink-0 mt-0.5 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">{item.icon}</span>
                   <div>
                     <p className="text-sm font-semibold text-text group-hover:text-white transition-colors">
                       {item.label}
                     </p>
-                    <p className="text-xs text-muted mt-0.5">
+                    <p className="text-xs text-muted group-hover:text-muted/90 transition-colors mt-0.5">
                       {item.desc}
                     </p>
                   </div>
