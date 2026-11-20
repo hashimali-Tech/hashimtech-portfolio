@@ -32,7 +32,7 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
           {/* Left Column: Photo 2 + Identity Highlights (col-span-5) */}
           <div data-reveal className="lg:col-span-5 flex flex-col gap-6">
-            <div className="relative rounded-[2rem] bg-surface/85 border border-white/10 p-2 sm:p-2.5 shadow-elevation backdrop-blur-xl overflow-hidden group">
+            <div className="relative rounded-[2rem] bg-surface/85 border border-white/10 hover:border-brand-2/60 hover:shadow-[0_0_36px_rgba(76,141,255,0.25)] p-2 sm:p-2.5 shadow-elevation backdrop-blur-xl overflow-hidden group transition-all duration-500">
               <div className="relative aspect-[578/750] w-full rounded-[1.6rem] overflow-hidden bg-surface-2">
                 {/* Mobile Image (< 640px) */}
                 <div className="sm:hidden w-full h-full">
@@ -64,7 +64,7 @@ export default function About() {
                 />
 
                 {/* Overlay Badge */}
-                <div className="absolute bottom-4 inset-x-4 p-3.5 rounded-2xl bg-surface/90 border border-white/10 backdrop-blur-xl shadow-lg flex items-center justify-between">
+                <div className="absolute bottom-4 inset-x-4 p-3.5 rounded-2xl bg-surface/90 border border-white/10 hover:border-brand-2/50 backdrop-blur-xl shadow-lg flex items-center justify-between transition-colors duration-300">
                   <div>
                     <p className="text-sm font-bold text-text leading-tight">{profile.name}</p>
                     <p className="text-[11px] text-muted mt-0.5">{education.school}</p>
@@ -78,9 +78,9 @@ export default function About() {
             </div>
 
             {/* Quick Facts Card */}
-            <div className="p-5 sm:p-6 rounded-2xl bg-surface/70 border border-white/8 backdrop-blur-md flex flex-col gap-4 shadow-sm">
-              <div className="flex items-center gap-3.5 text-sm pb-3.5 border-b border-white/[0.06]">
-                <div className="w-9 h-9 rounded-xl bg-brand/10 border border-brand/25 flex items-center justify-center shrink-0">
+            <div className="p-5 sm:p-6 rounded-2xl bg-surface/70 border border-white/8 hover:border-brand-2/60 hover:shadow-[0_0_28px_rgba(76,141,255,0.2)] backdrop-blur-md flex flex-col gap-4 shadow-sm transition-all duration-300">
+              <div className="group flex items-center gap-3.5 text-sm pb-3.5 border-b border-white/[0.06]">
+                <div className="w-9 h-9 rounded-xl bg-brand/10 border border-brand/25 group-hover:border-brand-2/70 group-hover:shadow-[0_0_12px_rgba(125,211,252,0.4)] group-hover:scale-105 flex items-center justify-center shrink-0 transition-all duration-300">
                   <GraduationCap className="w-4 h-4 text-brand-2" />
                 </div>
                 <div className="min-w-0">
@@ -90,8 +90,8 @@ export default function About() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3.5 text-sm pb-3.5 border-b border-white/[0.06]">
-                <div className="w-9 h-9 rounded-xl bg-brand/10 border border-brand/25 flex items-center justify-center shrink-0">
+              <div className="group flex items-center gap-3.5 text-sm pb-3.5 border-b border-white/[0.06]">
+                <div className="w-9 h-9 rounded-xl bg-brand/10 border border-brand/25 group-hover:border-brand-2/70 group-hover:shadow-[0_0_12px_rgba(125,211,252,0.4)] group-hover:scale-105 flex items-center justify-center shrink-0 transition-all duration-300">
                   <MapPin className="w-4 h-4 text-brand-2" />
                 </div>
                 <div>
@@ -100,8 +100,8 @@ export default function About() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-3.5 text-sm">
-                <div className="w-9 h-9 rounded-xl bg-brand/10 border border-brand/25 flex items-center justify-center shrink-0">
+              <div className="group flex items-center gap-3.5 text-sm">
+                <div className="w-9 h-9 rounded-xl bg-brand/10 border border-brand/25 group-hover:border-brand-2/70 group-hover:shadow-[0_0_12px_rgba(125,211,252,0.4)] group-hover:scale-105 flex items-center justify-center shrink-0 transition-all duration-300">
                   <Briefcase className="w-4 h-4 text-brand-2" />
                 </div>
                 <div>
@@ -175,7 +175,7 @@ export default function About() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="View Hashim Ali's GitHub repositories"
-                  className="inline-flex items-center gap-2.5 px-5 py-3.5 rounded-full bg-surface-2/90 border border-white/10 text-text font-semibold text-sm hover:bg-surface-hover hover:border-brand/40 hover:text-white active:scale-95 transition-all shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-2 min-h-[46px]"
+                  className="inline-flex items-center gap-2.5 px-5 py-3.5 rounded-full bg-surface-2/90 border border-white/10 text-text font-semibold text-sm hover:bg-surface-hover hover:border-brand-2/70 hover:shadow-[0_0_20px_rgba(125,211,252,0.4)] hover:text-white active:scale-95 transition-all shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-2 min-h-[46px]"
                 >
                   <GitHubIcon className="w-4 h-4 text-muted" />
                   <span>View GitHub</span>

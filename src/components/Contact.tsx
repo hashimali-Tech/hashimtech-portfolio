@@ -106,7 +106,7 @@ export default function Contact() {
   };
 
   const inputClass =
-    "w-full px-4 py-3 rounded-xl bg-[#0E1530] border border-white/10 text-white text-sm placeholder:text-muted/60 caret-[#7DD3FC] focus:outline-none focus:border-[#7DD3FC] focus:ring-1 focus:ring-[#7DD3FC]/40 transition-all";
+    "w-full px-4 py-3 rounded-xl bg-[#0E1530] border border-white/10 hover:border-brand-2/50 hover:shadow-[0_0_15px_rgba(125,211,252,0.15)] text-white text-sm placeholder:text-muted/60 caret-[#7DD3FC] focus:outline-none focus:border-[#7DD3FC] focus:ring-1 focus:ring-[#7DD3FC]/40 transition-all duration-200";
 
   const textareaClass =
     inputClass + " resize-none leading-relaxed";
@@ -151,7 +151,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           {/* Left Column: Direct Connect & Info (lg:col-span-5) */}
           <div data-reveal className="lg:col-span-5 flex flex-col gap-6">
-            <div className="p-6 sm:p-7 rounded-2xl bg-surface/75 border border-white/8 backdrop-blur-md flex flex-col gap-5 shadow-sm">
+            <div className="p-6 sm:p-7 rounded-2xl bg-surface/75 border border-white/8 hover:border-brand-2/50 hover:shadow-[0_0_28px_rgba(76,141,255,0.2)] backdrop-blur-md flex flex-col gap-5 shadow-sm transition-all duration-300">
               <h3 className="font-heading font-bold text-lg text-text">Direct Links</h3>
 
               {profile.linkedin && (
@@ -160,9 +160,9 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Hashim Ali on LinkedIn"
-                  className="flex items-center gap-3.5 p-4 rounded-xl bg-surface-2/60 border border-white/8 hover:border-brand/40 hover:bg-surface-2 group transition-all"
+                  className="flex items-center gap-3.5 p-4 rounded-xl bg-surface-2/60 border border-white/8 hover:border-brand-2/70 hover:shadow-[0_0_20px_rgba(76,141,255,0.25)] hover:bg-surface-2 hover:-translate-y-0.5 group transition-all duration-300"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-[#0A66C2]/15 border border-[#0A66C2]/30 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-lg bg-[#0A66C2]/15 border border-[#0A66C2]/30 group-hover:border-[#0A66C2]/60 group-hover:shadow-[0_0_12px_rgba(10,102,194,0.4)] flex items-center justify-center shrink-0 transition-all">
                     <LinkedInIcon className="w-5 h-5 text-[#0A66C2]" />
                   </div>
                   <div className="flex-1 min-w-0">
@@ -181,9 +181,9 @@ export default function Contact() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Hashim Ali on GitHub"
-                  className="flex items-center gap-3.5 p-4 rounded-xl bg-surface-2/60 border border-white/8 hover:border-brand/40 hover:bg-surface-2 group transition-all"
+                  className="flex items-center gap-3.5 p-4 rounded-xl bg-surface-2/60 border border-white/8 hover:border-brand-2/70 hover:shadow-[0_0_20px_rgba(125,211,252,0.3)] hover:bg-surface-2 hover:-translate-y-0.5 group transition-all duration-300"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 group-hover:border-white/30 group-hover:shadow-[0_0_12px_rgba(255,255,255,0.2)] flex items-center justify-center shrink-0 transition-all">
                     <GitHubIcon className="w-5 h-5 text-text" />
                   </div>
                   <div className="flex-1 min-w-0">
@@ -203,7 +203,7 @@ export default function Contact() {
             </div>
 
             {/* Location card */}
-            <div className="p-6 rounded-2xl bg-surface/75 border border-white/8 backdrop-blur-md flex items-start gap-3.5 shadow-sm">
+            <div className="p-6 rounded-2xl bg-surface/75 border border-white/8 hover:border-brand-2/50 hover:shadow-[0_0_24px_rgba(76,141,255,0.18)] backdrop-blur-md flex items-start gap-3.5 shadow-sm transition-all duration-300">
               <div className="w-10 h-10 rounded-lg bg-brand/10 border border-brand/25 flex items-center justify-center shrink-0 mt-0.5">
                 <MapPin className="w-5 h-5 text-brand-2" />
               </div>
@@ -217,7 +217,7 @@ export default function Contact() {
 
           {/* Right Column: Interactive Form (lg:col-span-7) */}
           <div data-reveal className="lg:col-span-7">
-            <div className="p-6 sm:p-8 rounded-2xl bg-surface/75 border border-white/8 backdrop-blur-md shadow-sm">
+            <div className="p-6 sm:p-8 rounded-2xl bg-surface/75 border border-white/8 hover:border-brand-2/40 hover:shadow-[0_0_32px_rgba(76,141,255,0.16)] backdrop-blur-md shadow-sm transition-all duration-500">
               {submitted && submittedData ? (
                 <div className="flex flex-col items-center justify-center gap-4 py-8 text-center">
                   <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center">

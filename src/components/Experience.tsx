@@ -46,13 +46,13 @@ export default function Experience() {
                 {/* Timeline Node Marker */}
                 <div
                   aria-hidden="true"
-                  className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-surface border-2 border-brand shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform"
+                  className="absolute -left-[31px] sm:-left-[39px] top-1.5 w-4 h-4 rounded-full bg-surface border-2 border-brand shadow-sm flex items-center justify-center group-hover:border-brand-2 group-hover:shadow-[0_0_12px_rgba(125,211,252,0.6)] group-hover:scale-110 transition-all duration-300"
                 >
                   <div className="w-1.5 h-1.5 rounded-full bg-brand-2" />
                 </div>
 
                 {/* Content Card */}
-                <div className="p-6 sm:p-7 rounded-2xl bg-surface/85 border border-white/10 shadow-elevation backdrop-blur-md max-w-3xl hover:border-brand/40 hover:shadow-[0_15px_35px_-10px_rgba(76,141,255,0.15)] transition-all duration-300">
+                <div className="p-6 sm:p-7 rounded-2xl bg-surface/85 border border-white/10 shadow-elevation backdrop-blur-md max-w-3xl hover:border-brand-2/70 hover:shadow-[0_0_32px_rgba(76,141,255,0.25)] hover:-translate-y-0.5 transition-all duration-300">
                   <div className="flex flex-wrap items-center justify-between gap-3">
                     <div className="flex items-center gap-2 text-brand-2 text-xs font-semibold uppercase tracking-wider">
                       <Building2 className="w-4 h-4 text-brand" aria-hidden="true" />
@@ -60,7 +60,7 @@ export default function Experience() {
                     </div>
 
                     {item.period && (
-                      <span className="text-xs font-mono text-muted bg-surface-2 px-2.5 py-1 rounded-pill border border-white/5">
+                      <span className="text-xs font-mono text-muted bg-surface-2 px-2.5 py-1 rounded-pill border border-white/5 hover:border-brand-2/40 transition-colors">
                         {item.period}
                       </span>
                     )}

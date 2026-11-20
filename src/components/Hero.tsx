@@ -57,7 +57,7 @@ export default function Hero() {
             {/* Small Badge: PERSONAL PORTFOLIO */}
             <div
               data-hero-badge
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-2/90 border border-brand/40 text-xs font-bold text-brand-2 w-fit mb-5 sm:mb-6 shadow-sm backdrop-blur-md tracking-wider uppercase"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-2/90 border border-brand/40 hover:border-brand-2/80 hover:shadow-[0_0_16px_rgba(125,211,252,0.4)] text-xs font-bold text-brand-2 w-fit mb-5 sm:mb-6 shadow-sm backdrop-blur-md tracking-wider uppercase transition-all duration-300 cursor-default"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-brand-2 shadow-[0_0_8px_rgba(125,211,252,0.8)] animate-pulse" />
               <span>Personal Portfolio</span>
@@ -105,9 +105,9 @@ export default function Hero() {
 
               <a
                 href="#about"
-                className="group inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-full bg-surface/80 border border-white/15 text-text font-semibold text-sm hover:border-brand/60 hover:bg-surface-hover active:scale-95 transition-all min-h-[48px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-2 backdrop-blur-md shadow-sm"
+                className="group inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-full bg-surface/80 border border-white/15 text-text font-semibold text-sm hover:border-brand-2/70 hover:shadow-[0_0_24px_rgba(125,211,252,0.4)] hover:bg-surface-hover active:scale-95 transition-all duration-300 min-h-[48px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-2 backdrop-blur-md shadow-sm"
               >
-                <span className="w-6 h-6 rounded-full border border-white/20 flex items-center justify-center group-hover:border-brand-2 group-hover:bg-brand/10 transition-colors">
+                <span className="w-6 h-6 rounded-full border border-white/20 flex items-center justify-center group-hover:border-brand-2 group-hover:bg-brand/10 group-hover:shadow-[0_0_10px_rgba(125,211,252,0.5)] transition-all duration-300">
                   <Play className="w-2.5 h-2.5 ml-0.5 text-brand-2" aria-hidden="true" />
                 </span>
                 <span>Watch Intro</span>
@@ -176,7 +176,7 @@ export default function Hero() {
               />
 
               {/* Centerpiece Portrait Card */}
-              <div className="relative z-10 w-[82%] sm:w-[78%] rounded-[2.2rem] overflow-hidden border border-white/15 bg-surface/80 p-2 shadow-[0_25px_60px_rgba(0,0,0,0.65),0_0_0_1px_rgba(76,141,255,0.2)] backdrop-blur-xl group">
+              <div className="relative z-10 w-[82%] sm:w-[78%] rounded-[2.2rem] overflow-hidden border border-white/15 hover:border-brand-2/60 hover:shadow-[0_25px_60px_rgba(0,0,0,0.65),0_0_36px_rgba(76,141,255,0.35)] bg-surface/80 p-2 shadow-[0_25px_60px_rgba(0,0,0,0.65),0_0_0_1px_rgba(76,141,255,0.2)] backdrop-blur-xl group transition-all duration-500">
                 <div className="relative aspect-[571/760] w-full rounded-[1.8rem] overflow-hidden bg-surface-2">
                   {/* Mobile Image (< 640px) */}
                   <div className="sm:hidden w-full h-full">
@@ -210,7 +210,7 @@ export default function Hero() {
                   />
 
                   {/* Desk Laptop Glowing Indicator at bottom */}
-                  <div className="absolute bottom-3 inset-x-3 p-2.5 rounded-xl bg-surface/90 border border-brand/35 backdrop-blur-md shadow-lg flex items-center justify-between">
+                  <div className="absolute bottom-3 inset-x-3 p-2.5 rounded-xl bg-surface/90 border border-brand/35 hover:border-brand-2/70 hover:shadow-[0_0_18px_rgba(76,141,255,0.4)] backdrop-blur-md shadow-lg flex items-center justify-between transition-all duration-300">
                     <div className="flex items-center gap-2">
                       <div className="w-6 h-6 rounded-lg bg-brand/20 border border-brand/40 flex items-center justify-center text-brand-2">
                         <Code2 className="w-3.5 h-3.5" aria-hidden="true" />

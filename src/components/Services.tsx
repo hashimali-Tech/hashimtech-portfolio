@@ -45,10 +45,10 @@ export default function Services() {
             <div
               key={service.title}
               data-reveal
-              className="group relative flex flex-col h-full p-6 sm:p-7 rounded-2xl bg-surface/75 border border-white/8 hover:border-brand/40 hover:bg-surface/90 hover:shadow-[0_20px_48px_-12px_rgba(76,141,255,0.2)] transition-all duration-300 backdrop-blur-md gap-4"
+              className="group relative flex flex-col h-full p-6 sm:p-7 rounded-2xl bg-surface/75 border border-white/8 hover:border-brand-2/70 hover:bg-surface/90 hover:shadow-[0_0_32px_rgba(76,141,255,0.28)] hover:-translate-y-1 transition-all duration-300 backdrop-blur-md gap-4"
             >
               {/* Service Icon Box */}
-              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand/20 to-brand-2/10 border border-brand/25 flex items-center justify-center text-3xl shadow-sm group-hover:border-brand/50 group-hover:shadow-[0_0_20px_rgba(76,141,255,0.25)] transition-all shrink-0">
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand/20 to-brand-2/10 border border-brand/25 flex items-center justify-center text-3xl shadow-sm group-hover:border-brand-2/70 group-hover:shadow-[0_0_24px_rgba(125,211,252,0.45)] group-hover:scale-105 transition-all shrink-0">
                 {service.icon}
               </div>
 

@@ -6,7 +6,7 @@ function ProjectCard({ project }: { project: ProjectItem }) {
     <article
       data-reveal
       aria-labelledby={`project-${project.id}-title`}
-      className="relative flex flex-col justify-between p-6 sm:p-8 rounded-2xl bg-surface/75 border border-white/10 shadow-elevation backdrop-blur-md hover:border-brand/40 hover:-translate-y-1.5 hover:shadow-[0_20px_40px_-15px_rgba(76,141,255,0.18)] transition-all duration-300 group overflow-hidden"
+      className="relative flex flex-col justify-between p-6 sm:p-8 rounded-2xl bg-surface/75 border border-white/10 shadow-elevation backdrop-blur-md hover:border-brand-2/70 hover:-translate-y-1.5 hover:shadow-[0_0_32px_rgba(76,141,255,0.25)] transition-all duration-300 group overflow-hidden"
     >
       {/* Top subtle blue/cyan gradient accent highlight on hover */}
       <div
@@ -17,7 +17,7 @@ function ProjectCard({ project }: { project: ProjectItem }) {
       {/* Top Section: Icon badge & Project Name */}
       <div className="flex flex-col">
         {/* Subtle folder / code icon */}
-        <div className="w-11 h-11 rounded-xl bg-brand/10 border border-brand/20 flex items-center justify-center text-brand-2 group-hover:bg-brand/20 group-hover:scale-105 transition-all duration-300 mb-5">
+        <div className="w-11 h-11 rounded-xl bg-brand/10 border border-brand/20 flex items-center justify-center text-brand-2 group-hover:border-brand-2/60 group-hover:bg-brand/20 group-hover:scale-105 group-hover:shadow-[0_0_16px_rgba(76,141,255,0.35)] transition-all duration-300 mb-5">
           <FolderCode className="w-5 h-5" aria-hidden="true" />
         </div>
 
@@ -39,7 +39,7 @@ function ProjectCard({ project }: { project: ProjectItem }) {
           {project.stack.map((tech) => (
             <span
               key={tech}
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-2/90 border border-brand/20 text-xs font-mono text-brand-2/90 hover:border-brand/40 hover:text-white transition-all shadow-sm"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-2/90 border border-brand/20 text-xs font-mono text-brand-2/90 hover:border-brand-2/70 hover:bg-brand/20 hover:text-white hover:shadow-[0_0_12px_rgba(125,211,252,0.35)] hover:scale-105 transition-all duration-200 cursor-default shadow-sm"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-brand-2/70" />
               {tech}

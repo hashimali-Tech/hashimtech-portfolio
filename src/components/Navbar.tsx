@@ -165,7 +165,7 @@ export default function Navbar() {
         >
           <div
             ref={navCenterRef}
-            className="relative flex items-center gap-1 px-2 py-1.5 rounded-full bg-surface-2/40 border border-white/[0.05]"
+            className="relative flex items-center gap-1 px-2 py-1.5 rounded-full bg-surface-2/40 border border-white/[0.08] hover:border-brand-2/50 hover:shadow-[0_0_20px_rgba(76,141,255,0.2)] transition-all duration-300"
           >
             {/* Sliding active indicator */}
             <div

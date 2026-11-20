@@ -45,11 +45,11 @@ export default function Skills() {
             <div
               key={group.title}
               data-reveal
-              className="group relative flex flex-col h-full p-6 sm:p-7 rounded-2xl bg-surface/75 border border-white/8 hover:border-brand/40 hover:bg-surface/90 hover:shadow-[0_16px_40px_-12px_rgba(76,141,255,0.22)] transition-all duration-300 backdrop-blur-md"
+              className="group relative flex flex-col h-full p-6 sm:p-7 rounded-2xl bg-surface/75 border border-white/8 hover:border-brand-2/70 hover:bg-surface/90 hover:shadow-[0_0_32px_rgba(76,141,255,0.28)] hover:-translate-y-1 transition-all duration-300 backdrop-blur-md"
             >
               {/* Card Header */}
               <div className="flex items-center gap-3.5 mb-5">
-                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-2/10 border border-brand/25 flex items-center justify-center text-2xl shadow-sm group-hover:border-brand/50 transition-colors shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-brand/20 to-brand-2/10 border border-brand/25 flex items-center justify-center text-2xl shadow-sm group-hover:border-brand-2/70 group-hover:shadow-[0_0_18px_rgba(125,211,252,0.4)] group-hover:scale-105 transition-all shrink-0">
                   {group.emoji}
                 </div>
                 <h3 className="font-heading font-bold text-lg text-text group-hover:text-white transition-colors">
@@ -62,7 +62,7 @@ export default function Skills() {
                 {group.items.map((skill) => (
                   <span
                     key={skill}
-                    className="px-3 py-1.5 rounded-full bg-surface-2/80 border border-white/[0.07] text-xs font-medium text-muted group-hover:border-brand/25 group-hover:text-text/90 transition-all"
+                    className="px-3 py-1.5 rounded-full bg-surface-2/80 border border-white/[0.07] text-xs font-medium text-muted hover:border-brand-2/70 hover:bg-brand/15 hover:text-white hover:shadow-[0_0_12px_rgba(125,211,252,0.35)] hover:scale-105 transition-all duration-200 cursor-default"
                   >
                     {skill}
                   </span>
