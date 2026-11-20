@@ -1,5 +1,6 @@
+import Link from "next/link";
 import { projects, ProjectItem } from "@/data/content";
-import { FolderCode, Layers } from "lucide-react";
+import { FolderCode, Layers, ArrowUpRight } from "lucide-react";
 
 function ProjectCard({ project }: { project: ProjectItem }) {
   return (
@@ -21,13 +22,20 @@ function ProjectCard({ project }: { project: ProjectItem }) {
           <FolderCode className="w-5 h-5" aria-hidden="true" />
         </div>
 
-        {/* Project Name */}
-        <h3
-          id={`project-${project.id}-title`}
-          className="font-heading font-bold text-xl sm:text-2xl text-text tracking-tight group-hover:text-white transition-colors"
+        {/* Project Name & Link to Case Study */}
+        <Link
+          href={`/work/${project.id}`}
+          className="group/title focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-2 rounded-lg"
+          aria-label={`View case study for ${project.title}`}
         >
-          {project.title}
-        </h3>
+          <h3
+            id={`project-${project.id}-title`}
+            className="font-heading font-bold text-xl sm:text-2xl text-text tracking-tight group-hover:text-white group-hover/title:text-brand-2 transition-colors flex items-center justify-between gap-2"
+          >
+            <span>{project.title}</span>
+            <ArrowUpRight className="w-4 h-4 text-muted group-hover:text-brand-2 opacity-60 group-hover:opacity-100 transition-all shrink-0" aria-hidden="true" />
+          </h3>
+        </Link>
       </div>
 
       {/* Technologies Section */}

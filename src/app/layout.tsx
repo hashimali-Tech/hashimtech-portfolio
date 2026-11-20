@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Bricolage_Grotesque } from "next/font/google";
 import "./globals.css";
 import { profile } from "@/data/content";
+import { getSiteUrl } from "@/lib/site";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,29 +23,69 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
+const siteUrl = getSiteUrl();
+
 export const metadata: Metadata = {
-  title: `${profile.name} — ${profile.headline}`,
-  description: profile.intro,
-  metadataBase: new URL("https://hashimtech.dev"),
+  title: {
+    default: `${profile.name} — Full-Stack Developer & Software Engineer`,
+    template: `%s | ${profile.name}`,
+  },
+  description:
+    "Portfolio of Hashim Ali, Full-Stack Developer & BSIT student in Pakistan specializing in React, Next.js, Node.js, Express, MongoDB, and AI API integrations.",
+  keywords: [
+    "Hashim Ali",
+    "HashimTech",
+    "Full-Stack Developer",
+    "Software Engineer",
+    "React Developer",
+    "Next.js Portfolio",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "AI Integration",
+    "Web Developer Pakistan",
+    "MERN Stack",
+  ],
+  authors: [{ name: profile.name, url: siteUrl }],
+  creator: profile.name,
+  metadataBase: new URL(siteUrl),
   alternates: {
-    canonical: "/",
+    canonical: siteUrl,
   },
   openGraph: {
-    title: `${profile.name} (${profile.brand}) — Software Engineer`,
-    description: profile.intro,
-    url: "https://hashimtech.dev",
-    siteName: profile.brand,
+    title: `${profile.name} — Full-Stack Developer & Software Engineer`,
+    description:
+      "Explore real-world software engineering projects, modern full-stack web applications, and AI integrations built by Hashim Ali.",
+    url: siteUrl,
+    siteName: `${profile.name} (${profile.brand}) Portfolio`,
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: `${profile.name} — Full-Stack Developer & Software Engineer`,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${profile.name} — ${profile.headline}`,
-    description: profile.intro,
+    title: `${profile.name} — Full-Stack Developer & Software Engineer`,
+    description:
+      "Full-stack web applications, clean architectures, and AI integrations by Hashim Ali.",
+    images: ["/opengraph-image"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -58,7 +99,21 @@ export default function RootLayout({
     "@type": "Person",
     name: profile.name,
     alternateName: profile.brand,
+    url: siteUrl,
+    jobTitle: "Full-Stack Developer & Software Engineer",
     description: profile.intro,
+    knowsAbout: [
+      "Full-Stack Web Development",
+      "React.js",
+      "Next.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Python",
+      "FastAPI",
+      "AI API Integrations",
+      "REST Architecture",
+    ],
     address: {
       "@type": "PostalAddress",
       addressLocality: "Gujranwala",
