@@ -87,6 +87,9 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  verification: {
+    google: "pjIyEJMxbpZdLPMRtP0XfhDs9yiHS9394qwW6Rk33Xo",
+  },
 };
 
 export default function RootLayout({
@@ -134,6 +137,10 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
+        <meta
+          name="google-site-verification"
+          content="pjIyEJMxbpZdLPMRtP0XfhDs9yiHS9394qwW6Rk33Xo"
+        />
         <link
           rel="preload"
           as="image"
