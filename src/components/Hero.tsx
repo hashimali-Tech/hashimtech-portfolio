@@ -120,7 +120,7 @@ export default function Hero() {
               className="mt-8 sm:mt-10 pt-5 sm:pt-6 border-t border-white/[0.08] flex items-center gap-5 sm:gap-8 text-xs text-muted"
             >
               <div className="flex flex-col gap-0.5">
-                <span className="text-xl sm:text-2xl font-heading font-extrabold text-text tracking-tight">2+</span>
+                <span className="text-xl sm:text-2xl font-heading font-extrabold text-text tracking-tight">9+</span>
                 <span className="font-medium text-muted/80">Projects Built</span>
               </div>
               <div className="w-px h-8 bg-white/10" aria-hidden="true" />

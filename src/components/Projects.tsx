@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { projects, ProjectItem } from "@/data/content";
-import { FolderCode, Layers, ArrowUpRight } from "lucide-react";
+import { FolderCode, Layers, ArrowUpRight, ExternalLink } from "lucide-react";
+import { GitHubIcon } from "./Icons";
 
 function ProjectCard({ project }: { project: ProjectItem }) {
   return (
@@ -56,31 +57,36 @@ function ProjectCard({ project }: { project: ProjectItem }) {
         </div>
       </div>
 
-      {/* Future Link Compatibility (ready for repo / demo URLs without redesigning cards) */}
-      {(project.repoUrl || project.liveUrl) && (
-        <div className="mt-6 pt-4 border-t border-white/[0.06] flex items-center gap-3">
-          {project.repoUrl && (
-            <a
-              href={project.repoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-2 hover:underline"
-            >
-              Repository
-            </a>
-          )}
-          {project.liveUrl && (
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-brand-2 hover:underline"
-            >
-              Live Demo
-            </a>
-          )}
-        </div>
-      )}
+      {/* Action Footer: Live Repo Link & Case Study Link */}
+      <div className="mt-8 pt-5 border-t border-white/[0.06] flex items-center justify-between gap-3">
+        {project.repoUrl ? (
+          <a
+            href={project.repoUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-surface-2/90 border border-white/10 hover:border-brand-2/70 text-xs font-semibold text-text hover:text-white hover:shadow-[0_0_15px_rgba(125,211,252,0.3)] hover:-translate-y-0.5 active:scale-95 transition-all duration-200"
+            aria-label={`View ${project.title} on GitHub`}
+          >
+            <GitHubIcon className="w-3.5 h-3.5 text-muted group-hover:text-white" />
+            <span>GitHub</span>
+            <ExternalLink className="w-3 h-3 text-muted/70 ml-0.5" aria-hidden="true" />
+          </a>
+        ) : (
+          <span className="inline-flex items-center gap-1.5 text-[11px] font-medium text-muted/70 px-2.5 py-1 rounded-md bg-white/[0.03] border border-white/5">
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-400/80 animate-pulse" />
+            In Development
+          </span>
+        )}
+
+        <Link
+          href={`/work/${project.id}`}
+          className="inline-flex items-center gap-1 text-xs font-semibold text-brand-2 hover:text-white hover:underline transition-colors"
+          aria-label={`Read case study for ${project.title}`}
+        >
+          <span>Details</span>
+          <ArrowUpRight className="w-3.5 h-3.5" aria-hidden="true" />
+        </Link>
+      </div>
     </article>
   );
 }
